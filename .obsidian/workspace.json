@@ -11,9 +11,11 @@
             "id": "69335bef2f67fc8e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Praktikum.pdf"
+                "file": "Praktikum.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Praktikum.pdf",
+                "file": "Praktikum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Praktikum.pdf",
+                "file": "Praktikum.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Praktikum.pdf"
+                "file": "Praktikum.md"
               }
             }
           }
@@ -146,8 +148,8 @@
   },
   "active": "69335bef2f67fc8e",
   "lastOpenFiles": [
-    "Praktikum.md",
     "Praktikum.pdf",
+    "Praktikum.md",
     "asset/select9.png",
     "asset/select8.png",
     "asset/select7.png",

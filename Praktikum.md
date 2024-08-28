@@ -1,4 +1,14 @@
 ___
+
+| No  | Nama                 | Skor Keaktifan | Peran                                                    |
+| --- | -------------------- | -------------- | -------------------------------------------------------- |
+| 1   | Rezky Awalya         | 3              | Menyiapkan basecamp, post praktikum                      |
+| 2   | A. Ashadelah M.A     | 3              | kerja PPT                                                |
+| 3   | Fatsa Akhwani        | 3              | mencari soal,  beli gorengan                             |
+| 4   | Nur Afni Ramadani    | 3              | mencari soal, menghapus repository yang tidak dibutuhkan |
+| 5   | Nur Inayah Athaillah | 3              | Memilah" soal yang akan di masukkan ke ppt               |
+| 6   | Siti Nur Hasiza.A    | 3              | bikin github kelompok                                    |
+
 # Praktikum 5
 # Struktur Table
 
