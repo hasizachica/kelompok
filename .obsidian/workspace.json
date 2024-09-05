@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Praktikum.md",
+                "file": "1-GROUP BY & HAVING.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Praktikum.md",
+                "file": "1-GROUP BY & HAVING.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Praktikum.md",
+                "file": "1-GROUP BY & HAVING.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Praktikum.md"
+                "file": "1-GROUP BY & HAVING.md"
               }
             }
           }
@@ -148,8 +148,9 @@
   },
   "active": "69335bef2f67fc8e",
   "lastOpenFiles": [
+    "1-GROUP BY & HAVING.pdf",
     "Praktikum.pdf",
-    "Praktikum.md",
+    "1-GROUP BY & HAVING.md",
     "asset/select9.png",
     "asset/select8.png",
     "asset/select7.png",
