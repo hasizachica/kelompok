@@ -11,15 +11,44 @@
             "id": "69335bef2f67fc8e",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "TANTANGAN GROUP BY & HAVING 2.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "TANTANGAN GROUP BY & HAVING 2"
+            }
+          },
+          {
+            "id": "bd2d0e2c3b8c48e0",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "1-GROUP BY & HAVING.md",
+                "file": "4-Kesimpulan Video ERD dan Permasalahannya.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "4-Kesimpulan Video ERD dan Permasalahannya"
+            }
+          },
+          {
+            "id": "88c152cc6b0258b3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2-RELASI TABEL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2-RELASI TABEL"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -39,7 +68,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +85,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,14 +95,16 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 281.5
   },
   "right": {
     "id": "3b32fdb031a56089",
@@ -85,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1-GROUP BY & HAVING.md",
+                "file": "4-Kesimpulan Video ERD dan Permasalahannya.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +128,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 4-Kesimpulan Video ERD dan Permasalahannya"
             }
           },
           {
@@ -102,10 +139,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1-GROUP BY & HAVING.md",
+                "file": "4-Kesimpulan Video ERD dan Permasalahannya.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 4-Kesimpulan Video ERD dan Permasalahannya"
             }
           },
           {
@@ -116,7 +155,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,8 +166,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1-GROUP BY & HAVING.md"
-              }
+                "file": "4-Kesimpulan Video ERD dan Permasalahannya.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 4-Kesimpulan Video ERD dan Permasalahannya"
             }
           }
         ]
@@ -146,21 +189,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "69335bef2f67fc8e",
+  "active": "88c152cc6b0258b3",
   "lastOpenFiles": [
-    "1-GROUP BY & HAVING.pdf",
-    "Praktikum.pdf",
+    "2-RELASI TABEL.pdf",
+    "TANTANGAN GROUP BY & HAVING 2.pdf",
+    "tabel/q9.png",
+    "tabel/q8_2.png",
+    "tabel/q8.png",
+    "tabel/q7.png",
+    "tabel/q6.png",
+    "tabel/q5.png",
+    "tabel/q4.png",
+    "tabel/q3.png",
+    "tabel/q2.png",
+    "tabel/q10.png",
+    "tabel",
+    "2-RELASI TABEL.md",
+    "TANTANGAN GROUP BY & HAVING.md",
     "1-GROUP BY & HAVING.md",
-    "asset/select9.png",
-    "asset/select8.png",
-    "asset/select7.png",
-    "asset/select6.png",
-    "asset/select51.png",
-    "asset/select50.png",
-    "asset/select5.png",
-    "asset/select49.png",
-    "asset/select48.png",
-    "asset/select47.png",
+    "5-Konsep ERD.md",
+    "Translate YouTube.md",
+    "1-GROUP BY & HAVING.pdf",
+    "4-Kesimpulan Video ERD dan Permasalahannya.md",
+    "TANTANGAN GROUP BY & HAVING.pdf",
+    "Praktikum.pdf",
     "asset",
     "asett",
     "Untitled 1",
