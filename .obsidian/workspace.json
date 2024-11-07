@@ -39,12 +39,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2-RELASI TABEL.md",
+                "file": "5-TANTANGAN GROUP BY & HAVING.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2-RELASI TABEL"
+              "title": "5-TANTANGAN GROUP BY & HAVING"
             }
           }
         ],
@@ -191,7 +191,17 @@
   },
   "active": "88c152cc6b0258b3",
   "lastOpenFiles": [
+    "4-Kesimpulan Video ERD dan Permasalahannya.md",
+    "2-RELASI TABEL.md",
     "2-RELASI TABEL.pdf",
+    "5-TANTANGAN GROUP BY & HAVING.md",
+    "Konsep ERD.md",
+    "6-Konsep ERD.md",
+    "5-Konsep ERD.md",
+    "TUGAS BARU.md",
+    "1-GROUP BY & HAVING.pdf",
+    "1-GROUP BY & HAVING.md",
+    "TANTANGAN GROUP BY & HAVING.md",
     "TANTANGAN GROUP BY & HAVING 2.pdf",
     "tabel/q9.png",
     "tabel/q8_2.png",
@@ -204,13 +214,7 @@
     "tabel/q2.png",
     "tabel/q10.png",
     "tabel",
-    "2-RELASI TABEL.md",
-    "TANTANGAN GROUP BY & HAVING.md",
-    "1-GROUP BY & HAVING.md",
-    "5-Konsep ERD.md",
     "Translate YouTube.md",
-    "1-GROUP BY & HAVING.pdf",
-    "4-Kesimpulan Video ERD dan Permasalahannya.md",
     "TANTANGAN GROUP BY & HAVING.pdf",
     "Praktikum.pdf",
     "asset",
