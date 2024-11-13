@@ -11,12 +11,10 @@
             "id": "69335bef2f67fc8e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "TANTANGAN GROUP BY & HAVING 2.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "TANTANGAN GROUP BY & HAVING 2"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           },
           {
@@ -46,9 +44,23 @@
               "icon": "lucide-file",
               "title": "5-TANTANGAN GROUP BY & HAVING"
             }
+          },
+          {
+            "id": "34ec1a98a5c9e45d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tugas Kelompok - Kardinalitas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tugas Kelompok - Kardinalitas"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -189,37 +201,40 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "88c152cc6b0258b3",
+  "active": "34ec1a98a5c9e45d",
   "lastOpenFiles": [
-    "4-Kesimpulan Video ERD dan Permasalahannya.md",
-    "2-RELASI TABEL.md",
-    "2-RELASI TABEL.pdf",
+    "Translate YouTube.md",
+    "7-Konsep ERD.md",
+    "1-GROUP BY & HAVING.pdf",
+    "Tugas Kelompok - Kardinalitas.md",
+    "Pasted image 20241112192716.png",
+    "Pasted image 20241112184758.png",
+    "gambar/g3.jpg",
+    "gambar/g2.png",
+    "gambar/Screenshot 2024-11-12 195745.png",
+    "gambar/g1.png",
+    "asett/prk1.png",
+    "gambar/Screenshot 2024-11-12 184726.png",
+    "gambar/ini.md",
+    "asset/relasi1.png",
+    "tabel/prk1.png",
+    "6-Kesimpulan Video ERD dan Permasalahannya.md",
     "5-TANTANGAN GROUP BY & HAVING.md",
+    "2-RELASI TABEL.pdf",
+    "JS.pdf",
+    "TUGAS KAK HAFIDZ.md",
+    "TUGAS KAK HAFIDZ.pdf",
+    "gambar",
+    "New folder",
+    "2-RELASI TABEL.md",
     "Konsep ERD.md",
-    "6-Konsep ERD.md",
     "5-Konsep ERD.md",
     "TUGAS BARU.md",
-    "1-GROUP BY & HAVING.pdf",
     "1-GROUP BY & HAVING.md",
     "TANTANGAN GROUP BY & HAVING.md",
     "TANTANGAN GROUP BY & HAVING 2.pdf",
-    "tabel/q9.png",
-    "tabel/q8_2.png",
-    "tabel/q8.png",
-    "tabel/q7.png",
-    "tabel/q6.png",
-    "tabel/q5.png",
-    "tabel/q4.png",
-    "tabel/q3.png",
-    "tabel/q2.png",
-    "tabel/q10.png",
     "tabel",
-    "Translate YouTube.md",
     "TANTANGAN GROUP BY & HAVING.pdf",
-    "Praktikum.pdf",
-    "asset",
-    "asett",
-    "Untitled 1",
-    "Untitled"
+    "Praktikum.pdf"
   ]
 }
