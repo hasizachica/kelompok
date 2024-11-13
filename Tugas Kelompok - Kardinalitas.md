@@ -1,3 +1,13 @@
+___
+
+| No  | Nama                 | Skor Keaktifan | Peran                                                  |
+| --- | -------------------- | -------------- | ------------------------------------------------------ |
+| 1   | Rezky Awalya         | 3              | Menyiapkan basecamp, post tugas, bantu mendeskripsikan |
+| 2   | A. Ashadelah M.A     | 3              | Bantu doa                                              |
+| 3   | Fatsa Akhwani        | 3              | Mengerjakan one to one, many to one,many to many       |
+| 4   | Nur Afni Ramadani    | 3              | Makan gacoan                                           |
+| 5   | Nur Inayah Athaillah | 3              | Beli gacoan                                            |
+| 6   | Siti Nur Hasiza.A    | 3              | Mengerjakan tabel ERD                                  |
 # Penjelasan Kardinalitas
 ## 1 - to - 1
 Satu baris data pada tabel A berkaitan dengan satu baris data pada tabel B
