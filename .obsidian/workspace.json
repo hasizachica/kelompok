@@ -58,9 +58,37 @@
               "icon": "lucide-file",
               "title": "Tugas Kelompok - Kardinalitas"
             }
+          },
+          {
+            "id": "0ddd9c4ee5aec536",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "7-Konsep ERD.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7-Konsep ERD"
+            }
+          },
+          {
+            "id": "bf61a65b8737da76",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tugas Kelompok - Kardinalitas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tugas Kelompok - Kardinalitas"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -201,12 +229,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "34ec1a98a5c9e45d",
+  "active": "bf61a65b8737da76",
   "lastOpenFiles": [
-    "1-GROUP BY & HAVING.md",
+    "Tugas Kelompok - Kardinalitas.pdf",
+    "Tugas Kelompok - ERD & Kardinalitas.pdf",
+    "Tugas Kelompok - ERD & Kardinalitas.md",
     "Tugas Kelompok - Kardinalitas.md",
-    "Translate YouTube.md",
     "7-Konsep ERD.md",
+    "7-Konsep ERD.pdf",
+    "6-Kesimpulan Video ERD dan Permasalahannya.md",
+    "6-Kesimpulan Video ERD dan Permasalahannya.pdf",
+    "5-TANTANGAN GROUP BY & HAVING.md",
+    "5-TANTANGAN GROUP BY & HAVING.pdf",
+    "gambar/g4.png",
+    "gambar/Screenshot 2024-11-14 132746.png",
+    "gambar/Screenshot 2024-11-12 171332.png",
+    "1-GROUP BY & HAVING.md",
+    "Translate YouTube.md",
     "1-GROUP BY & HAVING.pdf",
     "Pasted image 20241112192716.png",
     "Pasted image 20241112184758.png",
@@ -215,12 +254,7 @@
     "gambar/Screenshot 2024-11-12 195745.png",
     "gambar/g1.png",
     "asett/prk1.png",
-    "gambar/Screenshot 2024-11-12 184726.png",
     "gambar/ini.md",
-    "asset/relasi1.png",
-    "tabel/prk1.png",
-    "6-Kesimpulan Video ERD dan Permasalahannya.md",
-    "5-TANTANGAN GROUP BY & HAVING.md",
     "2-RELASI TABEL.pdf",
     "JS.pdf",
     "TUGAS KAK HAFIDZ.md",
@@ -231,10 +265,6 @@
     "Konsep ERD.md",
     "5-Konsep ERD.md",
     "TUGAS BARU.md",
-    "TANTANGAN GROUP BY & HAVING.md",
-    "TANTANGAN GROUP BY & HAVING 2.pdf",
-    "tabel",
-    "TANTANGAN GROUP BY & HAVING.pdf",
-    "Praktikum.pdf"
+    "TANTANGAN GROUP BY & HAVING.md"
   ]
 }
