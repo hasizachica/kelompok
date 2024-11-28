@@ -45,7 +45,7 @@ CREATE TABLE Siswa (
 ```
 
 ## Hasil
-![[ERD.png]]
+![hasil](asett/ERD.png)
 ## Analisis Diagram ERD
 
 Diagram ERD ini menggambarkan hubungan antara tiga entitas utama dalam sistem informasi yang mengelola data siswa dan kegiatan ekstrakurikuler di sebuah sekolah:
@@ -85,7 +85,7 @@ SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa
 ```
 ### Hasil
 
-![[contoh1.png]]
+![hasil](asett/contoh1.png)
 ### Analisis
 1. **`SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa`:**
     - `Pilih` kolom `Nama_Guru` dari tabel `Guru_Pembina` (diberi alias `g`) dan hitung jumlah `ID_Siswa` yang unik dari tabel `Siswa` (diberi alias `s`) untuk setiap kelompok data. Hasil hitungan ini kemudian diberi alias `Jumlah_Siswa`.
