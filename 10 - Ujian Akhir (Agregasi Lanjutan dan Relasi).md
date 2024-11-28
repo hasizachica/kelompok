@@ -113,7 +113,7 @@ SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa
 ```
 ### Hasil
 
-![[contoh2.png]]
+![hasil](asett/contoh2.png)
 ### Analisis
 - **`SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa`:*
     - `Pilih` kolom `Nama_Guru` dari tabel `Guru_Pembina` (diberi alias `g`) dan hitung jumlah `ID_Siswa` yang unik dari tabel `Siswa` (diberi alias `s`) untuk setiap kelompok data. Hasil hitungan ini kemudian diberi alias `Jumlah_Siswa`.
