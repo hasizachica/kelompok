@@ -69,7 +69,7 @@ Diagram ERD ini menggambarkan hubungan antara tiga entitas utama dalam sistem in
   
 ### Kesimpulan:
 
-ERD ini adalah bahwa sistem informasi dirancang untuk menangani hubungan `many-to-many` antara siswa, kegiatan ekstrakurikuler, dan guru pembina. Desain ini memungkinkan pengelolaan data siswa secara fleksibel dan efisien dalam konteks keterlibatan mereka dalam berbagai kegiatan serta bimbingan dari beberapa guru pembina.
+Model ERD ini cocok buat mengatur hubungan rumit antara siswa, ekstrakurikuler, sama guru pembina. Karena ada hubungan `many-to-many`, butuh tabel tambahan biar data tetap rapi. Desain ini gampang dipake dan fleksibel, jadi mudah mengatur data siswa sama kegiatan tanpa susah ubah-ubah struktur.
 
 # Soal 2
 Selanjutnya tampilkan datanya secara kontekstual dengan menggunakan query relasi, group by, dan having secara bersamaan *dalam satu query*. Buatlah minimal sebanyak 2 contoh.
