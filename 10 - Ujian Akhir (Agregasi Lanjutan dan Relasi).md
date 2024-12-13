@@ -1,7 +1,6 @@
 
 | No  | Nama                       | Skor Keaktifan | Peran                                            |
 | :-: | -------------------------- | -------------- | ------------------------------------------------ |
-<<<<<<< HEAD
 |  1  | Rezky Awalya               | 3              | membantu membuat ERD                             |
 |  2  | A. Ashadelah M.A           | 3              | membantu membuat struktur                        |
 |  3  | Fatsa Akhwani              | 3              | Mengerjakan penjelasan dan analisis soal nomor 1 |
@@ -10,12 +9,13 @@
 |  6  | Siti Nur Hasiza. A         | 3              | mengerjakan soal nomor 1 dan 2                   |
 ## Tabel Keseluruhan
 
-![gambar](Aset/r5.png)
-![gambar](Aset/r4.png)
-![gambar](Aset/r3.png)
-![gambar](Aset/r8.png)
-![gambar](Aset/r6.png)
-![gambar](Aset/r7.png)
+![gambar](Aset/pembina.png)
+
+![gambar](Aset/siswa.png)
+
+![gambar](Aset/ekskul.png)
+
+![gambar](Aset/siswa_ekskul.png)
 
 # Soal 1
 
@@ -104,7 +104,7 @@ Diagram ERD ini menggambarkan hubungan antara tiga entitas utama dalam sistem in
 3. **Entitas Guru Pembina**:
    Mewakili data `guru` yang menjadi `pembina ekstrakurikuler`, termasuk `ID guru`, `nama`, dan `jabatan`.
 ## Hasil Relasi
-![gambar](Aset/r2.png)
+![hasil](asett/ERD.png)
 ### Hubungan Antar Entitas
 -  **Hubungan Siswa dan Ekstrakurikuler**
      `Many-to-Many` : Melalui entitas `Siswa_Ekstrakurikuler` , hubungan ini menunjukkan bahwa satu siswa dapat terlibat dalam beberapa ekstrakurikuler, dan satu ekstrakurikuler dapat diikuti oleh banyak siswa. Ini memungkinkan fleksibilitas bagi siswa untuk memilih kegiatan yang diminati.
@@ -115,77 +115,6 @@ Diagram ERD ini menggambarkan hubungan antara tiga entitas utama dalam sistem in
 Diagram ERD di atas menggambarkan struktur basis data untuk mengelola informasi siswa, ekstrakurikuler, dan guru pembina di sekolah.
 - `Hubungan Siswa dan Ekstrakurikuler` bersifat `many-to-many` , memungkinkan siswa untuk mengikuti beberapa kegiatan, sementara satu kegiatan dapat diikuti oleh banyak siswa. 
 - `Hubungan Guru Pembina dan Ekstrakurikuler` bersifat `one-to-many` , di mana setiap guru dapat membimbing beberapa ekstrakurikuler, tetapi satu ekstrakurikuler hanya memiliki satu guru pembina.
-=======
-|  1  | Rezky Awalya               | 3              | menguploand ke github dan google drive           |
-|  2  | A. Ashadelah M.A           | 3              | membantu mambuat struktur                        |
-|  3  | Fatsa Akhwani              | 3              | Mengerjakan penjelasan dan analisis soal nomor 1 |
-|  4  | Nur Afni Ramadani          | 3              | mengerjakan penjelasan dan analisis soal nomor 2 |
-|  5  | Nur Inayah Athaillah Abadi | 3              | mengerjakan di Obsidian                          |
-|  6  | Siti Nur Hasiza. A         | 3              | mengerjakan soal nomor 1 dan 2                   |
-
-# Soal 1
-Setiap kelompok merancang database di MySQL dari hasil perencanaan ERD-nya masing-masing. Di dalam database tersebut wajib menjadikan tabel berelasi, dengan menambah foreign key.
-
-
-## Query
-
-```mysql
-CREATE TABLE Guru_Pembina (
-    ->     ID_Guru INT PRIMARY KEY,
-    ->     Nama_Guru VARCHAR(100),
-    ->     Jabatan VARCHAR(50)
-    -> );
-```
-
-```mysql
-CREATE TABLE Ekstrakulikuler (
-    -> ID_ekstra INT PRIMARY KEY,
-    ->  Nama_Ekstr VARCHAR(100),
-    ->  Deskripsi TEXT
-    -> );
-```
-
-```mysql
-CREATE TABLE Siswa (
-    -> ID_Siswa INT PRIMARY KEY,
-    -> Alamat VARCHAR(255),
-    -> Telepon VARCHAR(15),
-    -> Nomor_Induk VARCHAR(20),
-    -> Kelas VARCHAR(50),
-    -> ID_Guru INT,
-    -> ID_ekstra INT,
-    -> FOREIGN KEY (ID_Guru) REFERENCES Guru_Pembina(ID_Guru),
-    -> FOREIGN KEY (ID_ekstra) REFERENCES Ekstrakulikuler(ID_ekstra)
-    -> );
-```
-
-## Hasil
-![hasil](asett/ERD.png)
-## Analisis Diagram ERD
-
-Diagram ERD ini menggambarkan hubungan antara tiga entitas utama dalam sistem informasi yang mengelola data siswa dan kegiatan ekstrakurikuler di sebuah sekolah:
-
-1. **Entitas Siswa**: 
-   Mewakili data`siswa`, seperti` ID siswa`,` alamat`, `nomor telepon`, `nomor induk`, dan `kelas`. Siswa memiliki hubungan dengan guru pembina dan ekstrakurikuler yang diikuti.
-
-2. **Entitas Ekstrakurikuler**: 
-   Mewakili kegiatan `ekstrakurikuler`, seperti`ID ekstrakurikuler`, `nama`, dan `deskripsi kegiatan`.
-
-3. **Entitas Guru Pembina**: 
-   Mewakili data `guru` yang menjadi `pembina ekstrakurikuler`, termasuk `ID guru`, `nama`, dan `jabatan`.
-
-### Hubungan Antar Entitas
-
-- **Siswa dan Ekstrakurikuler**: 
-  Hubungan ini bersifat `many-to-many`, yang ditunjukkan oleh garis penghubung antara kedua entitas. Simbol `#` di depan atribut `ID_Ekstra` pada entitas `Siswa` menunjukkan bahwa satu siswa dapat mengikuti banyak ekstrakurikuler, dan satu ekstrakurikuler dapat diikuti oleh banyak siswa.
-
-- **Siswa dan Guru Pembina**: 
-  Hubungan ini juga bersifat `many-to-many`. Garis penghubung antara `Siswa` dan `Guru Pembina`  serta simbol `#` di depan atribut `ID_Guru` menunjukkan bahwa satu siswa dapat memiliki banyak guru pembina, dan satu guru dapat membina banyak siswa.
-  
-### Kesimpulan:
-
-Model ERD ini cocok buat mengatur hubungan rumit antara siswa, ekstrakurikuler, sama guru pembina. Karena ada hubungan `many-to-many`, butuh tabel tambahan biar data tetap rapi. Desain ini gampang dipake dan fleksibel, jadi mudah mengatur data siswa sama kegiatan tanpa susah ubah-ubah struktur.
->>>>>>> 2e30600ca9f28b03f0d4ee471d1bce818bda16b2
 
 # Soal 2
 Selanjutnya tampilkan datanya secara kontekstual dengan menggunakan query relasi, group by, dan having secara bersamaan *dalam satu query*. Buatlah minimal sebanyak 2 contoh.
@@ -193,8 +122,6 @@ Selanjutnya tampilkan datanya secara kontekstual dengan menggunakan query relasi
 ### Query
 
 ```mysql
-<<<<<<< HEAD
-
 SELECT S.Nama_Siswa, COUNT(SE.ID_Ekstra) AS Jumlah_Ekstra
     -> FROM Siswa S
     -> LEFT JOIN siswa_ekstrakurikuler SE ON S.ID_Siswa = SE.ID_Siswa
@@ -207,7 +134,7 @@ SELECT S.Nama_Siswa, COUNT(SE.ID_Ekstra) AS Jumlah_Ekstra
 - `Menampilkan Nama Siswa`: Query ini bertujuan untuk menampilkan daftar siswa dan jumlah ekstrakurikuler yang mereka ikuti.
 - `Menyaring Siswa Aktif`: Hanya siswa yang terdaftar di lebih dari 2 ekstrakurikuler yang akan ditampilkan.
 
-** Cara Relasi :**
+**Cara Relasi :**
 - `LEFT JOIN`: Menghubungkan tabel `Siswa` (alias S) dengan tabel `siswa_ekstrakurikuler` (alias SE) berdasarkan kolom `ID_Siswa`. Ini memungkinkan kita untuk mendapatkan semua siswa, bahkan jika mereka tidak terdaftar di ekstrakurikuler manapun
 
 **Cara Agregasi :**
@@ -231,71 +158,6 @@ SELECT S.Nama_Siswa, COUNT(SE.ID_Ekstra) AS Jumlah_Ekstra
     - `Filter` hasil kelompokkan. Hanya kelompok (siswa) yang memiliki jumlah ekstrakurikuler lebih dari 2 yang akan ditampilkan. Ini membantu mengidentifikasi siswa yang aktif dalam kegiatan ekstrakurikuler.
 ### Kesimpulan
 Hasil yang ditampilkan menunjukkan nama siswa beserta jumlah ekstrakurikuler yang diikutinya. Karena ada kondisi `HAVING COUNT(SE.ID_Ekstra) > 2`, maka hanya siswa yang terdaftar di lebih dari dua ekstrakurikuler yang akan muncul. Ini memberikan wawasan tentang siswa yang aktif terlibat dalam berbagai kegiatan, yang dapat menjadi fokus perhatian untuk pengembangan program ekstrakurikuler lebih lanjut.
-
-## Contoh 2
-### Query
-```mysql
- SELECT E.Nama_Ekstr, COUNT(SE.ID_Siswa) AS Jumlah_Siswa
-	-> FROM Ekstrakurikuler E
-    -> LEFT JOIN siswa_ekstrakurikuler SE ON E.ID_Ekstra = SE.ID_Ekstra
-    -> GROUP BY E.ID_Ekstra
-    -> HAVING COUNT(SE.ID_Siswa) > 5;
-```
-
-**Tujuan Query :**
-- `Menampilkan Nama Ekstrakurikuler`: Query ini bertujuan untuk menampilkan daftar ekstrakurikuler yang ada di sekolah dan jumlah siswa yang terdaftar di masing-masing ekstrakurikuler.
-- `Menyaring Ekstrakurikuler Populer`: Hanya ekstrakurikuler yang memiliki lebih dari 5 siswa yang akan ditampilkan.
-
-**Cara Relasi :**
-- `LEFT JOIN` Menghubungkan tabel `Ekstrakurikuler` (alias E) dengan tabel `siswa_ekstrakurikuler` (alias SE) berdasarkan kolom `ID_Ekstra`. Ini memungkinkan kita untuk mendapatkan semua ekstrakurikuler, bahkan jika tidak ada siswa yang terdaftar di beberapa ekstrakurikuler (siswa dengan 0 keterlibatan tidak akan muncul dalam hasil akhir).
-
-**Cara Agregasi :**
-- `COUNT(SE.ID_Siswa)`: Menghitung jumlah siswa yang terdaftar dalam setiap ekstrakurikuler. Fungsi `COUNT` digunakan untuk menghitung jumlah baris yang memenuhi kriteria tertentu.
-- `GROUP BY E.ID_Ekstra`: Mengelompokkan hasil berdasarkan ID ekstrakurikuler, sehingga kita dapat menghitung jumlah siswa untuk setiap ekstrakurikuler secara terpisah.
-- `HAVING COUNT(SE.ID_Siswa) > 5`: Menyaring hasil agregasi untuk hanya menampilkan ekstrakurikuler yang memiliki lebih dari 5 siswa terdaftar.
-
-### Hasil
-![gambar](Aset/r20.jpg)
-
-### Analisis
-1. **`SELECT E.Nama_Ekstr, COUNT(SE.ID_Siswa) AS Jumlah_Siswa`:**
-    - `Pilih` kolom `Nama_Ekstr` dari tabel `Ekstrakurikuler` (diberi alias `E`) dan hitung jumlah `ID_Siswa` yang terdaftar di ekstrakurikuler tersebut dari tabel `siswa_ekstrakurikuler` (diberi alias `SE`). Hasil hitungan ini diberi alias `Jumlah_Siswa`.
-2. **`FROM Ekstrakurikuler E`:**
-    - `Dari` tabel `Ekstrakurikuler`, berikan alias `E` untuk tabel ini. Tabel ini menjadi titik awal untuk pengambilan data mengenai ekstrakurikuler.
-3. **`LEFT JOIN siswa_ekstrakurikuler SE ON E.ID_Ekstra = SE.ID_Ekstra`:**
-    - `Gabungkan` tabel `siswa_ekstrakurikuler` (diberi alias `SE`) dengan tabel `Ekstrakurikuler` berdasarkan kesamaan nilai pada kolom `ID_Ekstra`. Artinya, data dari kedua tabel akan digabungkan jika ID ekstrakurikuler pada kedua tabel sama. `LEFT JOIN` memastikan semua ekstrakurikuler ditampilkan, bahkan yang tidak memiliki siswa terdaftar.
-4. **`GROUP BY E.ID_Ekstra`:**
-    - `Kelompokkan` hasil query berdasarkan `ID_Ekstra`. Ini berarti data akan dikelompokkan berdasarkan setiap ekstrakurikuler yang berbeda, sehingga jumlah siswa dapat dihitung untuk setiap ekstrakurikuler.
-5. **`HAVING COUNT(SE.ID_Siswa) > 5`:**
-    - `Filter` hasil kelompokkan. Hanya kelompok (ekstrakurikuler) yang memiliki jumlah siswa lebih dari 5 yang akan ditampilkan. Ini membantu mengidentifikasi ekstrakurikuler yang populer.
-### Kesimpulan
-Hasil yang ditampilkan menunjukkan daftar ekstrakurikuler beserta jumlah siswa yang terdaftar. Karena ada kondisi `HAVING COUNT(SE.ID_Siswa) > 5`, maka hanya ekstrakurikuler yang memiliki lebih dari lima siswa yang akan tampil. Ini membantu pihak sekolah dalam mengidentifikasi kegiatan yang paling diminati oleh siswa.
-=======
-SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa
-    -> FROM Guru_Pembina g
-    -> JOIN Siswa s ON g.ID_Guru = s.ID_Guru
-    -> GROUP BY g.ID_Guru, g.Nama_Guru
-    -> HAVING COUNT(s.ID_Siswa) > 1;
-
-```
-### Hasil
-
-![hasil](asett/contoh1.png)
-### Analisis
-1. **`SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa`:**
-    - `Pilih` kolom `Nama_Guru` dari tabel `Guru_Pembina` (diberi alias `g`) dan hitung jumlah `ID_Siswa` yang unik dari tabel `Siswa` (diberi alias `s`) untuk setiap kelompok data. Hasil hitungan ini kemudian diberi alias `Jumlah_Siswa`.
-2. **`FROM Guru_Pembina g`:**
-    - `Dari` tabel `Guru_Pembina`, berikan alias `g` untuk tabel ini. Tabel ini menjadi titik awal untuk mengambil data.
-3. **`JOIN Siswa s ON g.ID_Guru = s.ID_Guru`:**
-    - `Gabungkan` tabel `Siswa` (diberi alias `s`) dengan tabel `Guru_Pembina` berdasarkan kesamaan nilai pada kolom `ID_Guru`. Artinya, data dari kedua tabel akan digabungkan jika ID guru pada kedua tabel sama.
-4. **`GROUP BY g.ID_Guru, g.Nama_Guru`:**
-    - `Kelompokkan` hasil query berdasarkan `ID_Guru` dan `Nama_Guru`. Ini berarti data akan dikelompokkan berdasarkan setiap guru yang berbeda.
-5. **`HAVING COUNT(s.ID_Siswa) > 1`:**
-	-  `Filter` hasil kelompokkan. Hanya kelompok (guru) yang memiliki jumlah siswa lebih dari 1 yang akan ditampilkan.
-
-### Kesimpulan:
-
-Hasil yang ditampilkan dalam gambar menunjukkan daftar guru beserta jumlah siswa yang dibimbingnya. Karena ada kondisi `HAVING COUNT(s.ID_Siswa) > 1`, maka hanya guru yang memiliki lebih dari satu siswa yang tertampil.
 ## Contoh 2
 ### Query
 
@@ -304,24 +166,48 @@ SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa
     -> FROM Guru_Pembina g
     -> JOIN Siswa s ON g.ID_Guru = s.ID_Guru
     -> GROUP BY g.Nama_Guru;
-
 ```
+Tujuan Query :
+
+- `Menampilkan Nama Ekstrakurikuler`: Query ini bertujuan untuk menampilkan daftar ekstrakurikuler yang ada di sekolah dan jumlah siswa yang terdaftar di masing-masing ekstrakurikuler.
+
+- `Menyaring Ekstrakurikuler Populer`: Hanya ekstrakurikuler yang memiliki lebih dari 5 siswa yang akan ditampilkan.
+
+Cara Relasi :
+
+`LEFT JOIN` Menghubungkan tabel `Ekstrakurikuler` (alias E) dengan tabel `siswa_ekstrakurikuler` (alias SE) berdasarkan kolom `ID_Ekstra`. Ini memungkinkan kita untuk mendapatkan semua ekstrakurikuler, bahkan jika tidak ada siswa yang terdaftar di beberapa ekstrakurikuler (siswa dengan 0 keterlibatan tidak akan muncul dalam hasil akhir).
+
+Cara Agregasi :
+
+- `COUNT(SE.ID_Siswa)`: Menghitung jumlah siswa yang terdaftar dalam setiap ekstrakurikuler. Fungsi `COUNT` digunakan untuk menghitung jumlah baris yang memenuhi kriteria tertentu.
+
+- `GROUP BY E.ID_Ekstra`: Mengelompokkan hasil berdasarkan ID ekstrakurikuler, sehingga kita dapat menghitung jumlah siswa untuk setiap ekstrakurikuler secara terpisah.
+
+- `HAVING COUNT(SE.ID_Siswa) > 5`: Menyaring hasil agregasi untuk hanya menampilkan ekstrakurikuler yang memiliki lebih dari 5 siswa terdaftar.
 ### Hasil
 
 ![hasil](asett/contoh2.png)
 ### Analisis
-- **`SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa`:*
-    - `Pilih` kolom `Nama_Guru` dari tabel `Guru_Pembina` (diberi alias `g`) dan hitung jumlah `ID_Siswa` yang unik dari tabel `Siswa` (diberi alias `s`) untuk setiap kelompok data. Hasil hitungan ini kemudian diberi alias `Jumlah_Siswa`.
-- **`FROM Guru_Pembina g`:**
-    - `Dari` tabel `Guru_Pembina`, berikan alias `g` untuk tabel ini. Tabel ini menjadi titik awal untuk mengambil data.
-- **`JOIN Siswa s ON g.ID_Guru = s.ID_Guru`:**
-    - `Gabungkan` tabel `Siswa` (diberi alias `s`) dengan tabel `Guru_Pembina` berdasarkan kesamaan nilai pada kolom `ID_Guru`. Artinya, data dari kedua tabel akan digabungkan jika ID guru pada kedua tabel sama.
-- **`GROUP BY g.Nama_Guru`:**
-    - `Kelompokkan` hasil query berdasarkan `Nama_Guru`. Ini berarti data akan dikelompokkan berdasarkan setiap guru yang berbeda.
 
+1. **`SELECT E.Nama_Ekstr, COUNT(SE.ID_Siswa) AS Jumlah_Siswa`:**
+
+    - `Pilih` kolom `Nama_Ekstr` dari tabel `Ekstrakurikuler` (diberi alias `E`) dan hitung jumlah `ID_Siswa` yang terdaftar di ekstrakurikuler tersebut dari tabel `siswa_ekstrakurikuler` (diberi alias `SE`). Hasil hitungan ini diberi alias `Jumlah_Siswa`.
+
+2. **`FROM Ekstrakurikuler E`:**
+
+    - `Dari` tabel `Ekstrakurikuler`, berikan alias `E` untuk tabel ini. Tabel ini menjadi titik awal untuk pengambilan data mengenai ekstrakurikuler.
+
+3. **`LEFT JOIN siswa_ekstrakurikuler SE ON E.ID_Ekstra = SE.ID_Ekstra`:**
+
+    - `Gabungkan` tabel `siswa_ekstrakurikuler` (diberi alias `SE`) dengan tabel `Ekstrakurikuler` berdasarkan kesamaan nilai pada kolom `ID_Ekstra`. Artinya, data dari kedua tabel akan digabungkan jika ID ekstrakurikuler pada kedua tabel sama. `LEFT JOIN` memastikan semua ekstrakurikuler ditampilkan, bahkan yang tidak memiliki siswa terdaftar.
+
+4. **`GROUP BY E.ID_Ekstra`:**
+
+    - `Kelompokkan` hasil query berdasarkan `ID_Ekstra`. Ini berarti data akan dikelompokkan berdasarkan setiap ekstrakurikuler yang berbeda, sehingga jumlah siswa dapat dihitung untuk setiap ekstrakurikuler.
+
+5. **`HAVING COUNT(SE.ID_Siswa) > 5`:**
+
+    - `Filter` hasil kelompokkan. Hanya kelompok (ekstrakurikuler) yang memiliki jumlah siswa lebih dari 5 yang akan ditampilkan. Ini membantu mengidentifikasi ekstrakurikuler yang populer.
 ### Kesimpulan:
 
-query ini memberikan informasi jumlah siswa yang dibina oleh setiap guru. Dengan cara ini, kita bisa melihat seberapa banyak siswa yang dibimbing oleh masing-masing guru secara jelas dan terorganisir.
-
-
->>>>>>> 2e30600ca9f28b03f0d4ee471d1bce818bda16b2
+Hasil yang ditampilkan menunjukkan daftar ekstrakurikuler beserta jumlah siswa yang terdaftar. Karena ada kondisi `HAVING COUNT(SE.ID_Siswa) > 5`, maka hanya ekstrakurikuler yang memiliki lebih dari lima siswa yang akan tampil. Ini membantu pihak sekolah dalam mengidentifikasi kegiatan yang paling diminati oleh siswa.

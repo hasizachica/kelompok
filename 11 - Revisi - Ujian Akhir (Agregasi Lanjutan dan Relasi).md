@@ -59,7 +59,8 @@ Diagram ERD ini menggambarkan hubungan antara tiga entitas utama dalam sistem in
 	    - `Deskripsi`: Penjelasan mengenai prestasi.
 # Hasil Relasi
 
-![gambar](Aset/r_relasi.png)
+![gambar](Aset/r2.png)
+
 
 ## Hubungan Antar Entitas
 1. **Hubungan Siswa dan Ekstrakurikuler**
@@ -275,7 +276,7 @@ SELECT
     -> LEFT JOIN siswa_ekskul SE ON S.id_siswa = SE.id_siswa
     -> GROUP BY S.id_siswa
     -> HAVING COUNT(SE.id_ekskul) > 2;
-    ```
+```
   
 ### Tujuan Query
 Query ini bertujuan untuk menampilkan daftar siswa yang mengikuti lebih dari dua ekstrakurikuler. Outputnya mencakup nama siswa dan jumlah ekstrakurikuler yang diikuti.
