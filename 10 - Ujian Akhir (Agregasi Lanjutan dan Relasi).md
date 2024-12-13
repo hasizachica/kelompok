@@ -162,10 +162,12 @@ Hasil yang ditampilkan menunjukkan nama siswa beserta jumlah ekstrakurikuler yan
 ### Query
 
 ```mysql
-SELECT g.Nama_Guru, COUNT(s.ID_Siswa) AS Jumlah_Siswa
-    -> FROM Guru_Pembina g
-    -> JOIN Siswa s ON g.ID_Guru = s.ID_Guru
-    -> GROUP BY g.Nama_Guru;
+SELECT E.Nama_Ekstr, COUNT(SE.ID_Siswa) AS Jumlah_Siswa
+	->FROM Ekstrakurikuler E
+	->LEFT JOIN siswa_ekstrakurikuler SE ON E.ID_Ekstra = SE.ID_Ekstra
+	->GROUP BY E.ID_Ekstra
+	->HAVING COUNT(SE.ID_Siswa) > 5;
+
 ```
 Tujuan Query :
 
@@ -186,7 +188,7 @@ Cara Agregasi :
 - `HAVING COUNT(SE.ID_Siswa) > 5`: Menyaring hasil agregasi untuk hanya menampilkan ekstrakurikuler yang memiliki lebih dari 5 siswa terdaftar.
 ### Hasil
 
-![hasil](asett/contoh2.png)
+![gambar](Aset/r20.jpg)
 ### Analisis
 
 1. **`SELECT E.Nama_Ekstr, COUNT(SE.ID_Siswa) AS Jumlah_Siswa`:**
