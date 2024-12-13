@@ -268,12 +268,12 @@ Tabel `prestasi` terhubung dengan tabel `ekskul` melalui kolom `id_ekskul`. Ini 
 
 ```mysql
 SELECT
-	 S.nama AS Nama_Siswa,
-	 COUNT(SE.id_ekskul) AS Jumlah_Ekstrakurikuler
-	 FROM siswa S
-     LEFT JOIN siswa_ekskul SE ON S.id_siswa = SE.id_siswa
-     GROUP BY S.id_siswa
-     HAVING COUNT(SE.id_ekskul) > 2;
+	S.nama AS Nama_Siswa,
+	COUNT(SE.id_ekskul) AS Jumlah_Ekstrakurikuler
+	FROM siswa S
+	LEFT JOIN siswa_ekskul SE ON S.id_siswa = SE.id_siswa
+	GROUP BY S.id_siswa
+	HAVING COUNT(SE.id_ekskul) > 2;
 ```
   
 ### Tujuan Query
@@ -315,18 +315,18 @@ Query ini efektif untuk menampilkan siswa yang aktif mengikuti banyak ekstrakuri
 ## CONTOH 2
 ### Query
 ```mysql
- SELECT e.id_ekskul, e.nama_ekskul, COUNT(se.id_siswa) AS jumlah_anggota
-		FROM ekskul e
-		JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
-	    GROUP BY e.id_ekskul, e.nama_ekskul
-	    HAVING COUNT(se.id_siswa) > (
-		SELECT AVG(jumlah_anggota)
-	    FROM (
-	    SELECT COUNT(se.id_siswa) AS jumlah_anggota
-		FROM ekskul e
-        JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
-	    GROUP BY e.id_ekskul
-     ) AS rata_rata_anggota
+SELECT e.id_ekskul, e.nama_ekskul, COUNT(se.id_siswa) AS jumlah_anggota 
+FROM ekskul e
+	 JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
+	 GROUP BY e.id_ekskul, e.nama_ekskul
+	 HAVING COUNT(se.id_siswa) > (
+	 SELECT AVG(jumlah_anggota)
+FROM (
+	 SELECT COUNT(se.id_siswa) AS jumlah_anggota
+	 FROM ekskul e
+	 JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
+	 GROUP BY e.id_ekskul
+) AS rata_rata_anggota
  )
 	 ORDER BY jumlah_anggota DESC;
 ```

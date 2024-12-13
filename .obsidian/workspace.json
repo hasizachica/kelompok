@@ -11,11 +11,13 @@
             "id": "e39c2d400ce27169",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).pdf"
+                "file": "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
+              "icon": "lucide-file",
               "title": "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi)"
             }
           }
@@ -162,8 +164,8 @@
   },
   "active": "e39c2d400ce27169",
   "lastOpenFiles": [
-    "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).md",
     "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).pdf",
+    "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).md",
     "Aset/r1.png",
     "Aset/Screenshot 2024-12-12 204517.png",
     "Aset/Screenshot 2024-12-13 135558.png",
