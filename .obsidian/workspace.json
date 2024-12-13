@@ -8,113 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "69335bef2f67fc8e",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
-          },
-          {
-            "id": "bd2d0e2c3b8c48e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "4-Kesimpulan Video ERD dan Permasalahannya.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4-Kesimpulan Video ERD dan Permasalahannya"
-            }
-          },
-          {
-            "id": "88c152cc6b0258b3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5-TANTANGAN GROUP BY & HAVING.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5-TANTANGAN GROUP BY & HAVING"
-            }
-          },
-          {
-            "id": "34ec1a98a5c9e45d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "9 - Tugas Kelompok - Kardinalitas.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9 - Tugas Kelompok - Kardinalitas"
-            }
-          },
-          {
-            "id": "0ddd9c4ee5aec536",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "7-Konsep ERD.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7-Konsep ERD"
-            }
-          },
-          {
-            "id": "bf61a65b8737da76",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "9 - Tugas Kelompok - Kardinalitas.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9 - Tugas Kelompok - Kardinalitas"
-            }
-          },
-          {
-            "id": "dab960990b34aa31",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Aset/r17.png"
-              },
-              "icon": "lucide-image",
-              "title": "r17"
-            }
-          },
-          {
             "id": "e39c2d400ce27169",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "10 - Ujian Akhir (Agregasi Lanjutan dan Relasi).md",
-                "mode": "source",
-                "source": false
+                "file": "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).pdf"
               },
-              "icon": "lucide-file",
-              "title": "10 - Ujian Akhir (Agregasi Lanjutan dan Relasi)"
+              "icon": "lucide-file-text",
+              "title": "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi)"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -249,18 +154,21 @@
     "hiddenItems": {
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
+      "canvas:Create new canvas": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false
     }
   },
   "active": "e39c2d400ce27169",
   "lastOpenFiles": [
-    "10 - Ujian Akhir (Agregasi Lanjutan dan Relasi).pdf",
-    "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).pdf",
     "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).md",
+    "11 - Revisi - Ujian Akhir (Agregasi Lanjutan dan Relasi).pdf",
+    "Aset/r1.png",
+    "Aset/Screenshot 2024-12-12 204517.png",
+    "Aset/Screenshot 2024-12-13 135558.png",
     "10 - Ujian Akhir (Agregasi Lanjutan dan Relasi).md",
+    "10 - Ujian Akhir (Agregasi Lanjutan dan Relasi).pdf",
     "12 - Ujian Akhir (Agregasi Lanjutan dan Relasi).md",
     "Aset/siswa_ekskul.png",
     "Aset/siswa.png",
@@ -270,9 +178,6 @@
     "Aset/ekskul.png",
     "9 - Tugas Kelompok - Kardinalitas.md",
     "asett/contoh2.png",
-    "asett/contoh1.png",
-    "asett/ERD.png",
-    "Aset/r20.jpg",
     "Aset/r1.png.~tmp",
     "Aset",
     "1-GROUP BY & HAVING.md",

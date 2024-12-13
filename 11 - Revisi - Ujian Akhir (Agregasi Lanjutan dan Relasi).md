@@ -60,8 +60,6 @@ Diagram ERD ini menggambarkan hubungan antara tiga entitas utama dalam sistem in
 # Hasil Relasi
 
 ![gambar](Aset/r2.png)
-
-
 ## Hubungan Antar Entitas
 1. **Hubungan Siswa dan Ekstrakurikuler**
 - **Tipe Relasi**: `Many-to-Many`
@@ -270,12 +268,12 @@ Tabel `prestasi` terhubung dengan tabel `ekskul` melalui kolom `id_ekskul`. Ini 
 
 ```mysql
 SELECT
-    -> S.nama AS Nama_Siswa,
-    -> COUNT(SE.id_ekskul) AS Jumlah_Ekstrakurikuler
-    -> FROM siswa S
-    -> LEFT JOIN siswa_ekskul SE ON S.id_siswa = SE.id_siswa
-    -> GROUP BY S.id_siswa
-    -> HAVING COUNT(SE.id_ekskul) > 2;
+	 S.nama AS Nama_Siswa,
+	 COUNT(SE.id_ekskul) AS Jumlah_Ekstrakurikuler
+	 FROM siswa S
+     LEFT JOIN siswa_ekskul SE ON S.id_siswa = SE.id_siswa
+     GROUP BY S.id_siswa
+     HAVING COUNT(SE.id_ekskul) > 2;
 ```
   
 ### Tujuan Query
@@ -318,19 +316,19 @@ Query ini efektif untuk menampilkan siswa yang aktif mengikuti banyak ekstrakuri
 ### Query
 ```mysql
  SELECT e.id_ekskul, e.nama_ekskul, COUNT(se.id_siswa) AS jumlah_anggota
-    -> FROM ekskul e
-    -> JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
-    -> GROUP BY e.id_ekskul, e.nama_ekskul
-    -> HAVING COUNT(se.id_siswa) > (
-    ->     SELECT AVG(jumlah_anggota)
-    ->     FROM (
-    ->         SELECT COUNT(se.id_siswa) AS jumlah_anggota
-    ->         FROM ekskul e
-    ->         JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
-    ->         GROUP BY e.id_ekskul
-    ->     ) AS rata_rata_anggota
-    -> )
-    -> ORDER BY jumlah_anggota DESC;
+		FROM ekskul e
+		JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
+	    GROUP BY e.id_ekskul, e.nama_ekskul
+	    HAVING COUNT(se.id_siswa) > (
+		SELECT AVG(jumlah_anggota)
+	    FROM (
+	    SELECT COUNT(se.id_siswa) AS jumlah_anggota
+		FROM ekskul e
+        JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
+	    GROUP BY e.id_ekskul
+     ) AS rata_rata_anggota
+ )
+	 ORDER BY jumlah_anggota DESC;
 ```
 
 ### Tujuan Query
@@ -353,22 +351,92 @@ Query ini bertujuan untuk menampilkan daftar ekskul yang **populer**, yaitu eksk
     - Mengurutkan ekskul berdasarkan jumlah anggota secara menurun menggunakan **`ORDER BY jumlah_anggota DESC`**.
 
 ### Hasil
-![gambar](Aset/r17.png)
 
+![gambar](Aset/r18.png)
 ### Analisis
-1. **Kompleksitas**:
-    - Query ini memproses data dalam dua level agregasi:
-        - Agregasi pertama menghitung jumlah anggota per ekskul.
-        - Agregasi kedua menghitung rata-rata anggota dari hasil agregasi pertama.
-    - Ini melibatkan **nested query**, sehingga kompleksitasnya lebih tinggi dibandingkan query biasa.
-2. **Kelebihan**:
-    - Efisien dalam memanfaatkan fungsi agregasi SQL.
-    - Mudah dimodifikasi jika kriteria "populer" berubah.
-    - Menyediakan informasi yang berguna untuk analisis popularitas ekskul.
-3. **Kekurangan**:
-    - Subquery dalam `HAVING` membuat kinerja lambat jika jumlah data besar.
-    - Bergantung pada keakuratan data relasi antara `ekskul` dan `siswa_ekskul`.
-4. **Optimasi yang Mungkin**:
-    - Menggunakan **Common Table Expressions (CTE)** untuk meningkatkan keterbacaan dan performa query jika database mendukung fitur ini.
+
+1. SELECT
+
+```SQL
+SELECT e.id_ekskul, e.nama_ekskul, COUNT(se.id_siswa) AS jumlah_anggota
+```
+
+- `e.id_ekskul`: Mengambil ID unik untuk setiap ekskul dari tabel ekskul.
+- `e.nama_ekskul`: Mengambil nama ekskul dari tabel ekskul.
+- `COUNT(se.id_siswa) AS jumlah_anggota`: Menghitung jumlah siswa yang terdaftar dalam setiap ekskul. 
+- `Jumlah anggota` di sini adalah total siswa yang terhubung dengan suatu ekskul, yang diperoleh dengan menghitung berapa banyak entri yang ada di tabel `siswa_ekskul `untuk ekskul tersebut. Hasilnya dinamai alias `jumlah_anggota.`
+
+2. FROM
+
+```SQL
+FROM ekskul e
+```
+
+- Menentukan tabel utama yang digunakan dalam query, yaitu tabel `ekskul`. Tabel ini berisi informasi tentang semua ekskul yang ada.
+
+3. JOIN
+
+```SQL
+JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
+```
+
+- `JOIN` menggabungkan tabel` ekskul (alias e)` dengan tabel `siswa_ekskul (alias se) `berdasarkan `id_ekskul`.
+- Ini memungkinkan kita untuk mendapatkan data siswa yang terdaftar dalam ekskul tertentu. Dengan kata lain, hanya siswa yang terdaftar dalam ekskul yang relevan yang akan dihitung.
+
+4. GROUP BY
+
+```SQL
+GROUP BY e.id_ekskul, e.nama_ekskul
+```
+
+- Mengelompokkan hasil berdasarkan `id_ekskul` dan `nama_ekskul`.
+- Setiap kelompok akan mewakili satu ekskul, dan fungsi agregasi `COUNT` akan menghitung jumlah siswa untuk setiap ekskul.
+
+5. HAVING
+
+```SQL
+HAVING COUNT(se.id_siswa) > [...]
+```
+
+- Bagian ini menyaring kelompok data hasil pengelompokan dengan syarat bahwa jumlah siswa dalam kelompok tertentu dihitung menggunakan fungsi agregasi `COUNT`harus memenuhi kondisi berikut: **lebih besar daripada rata-rata jumlah anggota ekskul dari semua ekskul.**
+  
+
+ 6. Subquery untuk Rata-rata
+
+```SQL
+SELECT AVG(jumlah_anggota)
+FROM (
+    SELECT COUNT(se.id_siswa) AS jumlah_anggota
+    FROM ekskul e
+    JOIN siswa_ekskul se ON e.id_ekskul = se.id_ekskul
+    GROUP BY e.id_ekskul
+) AS rata_rata_anggota
+```
+
+- `SELECT AVG(jumlah_anggota)`: 
+	- Menghitung rata-rata dari nilai `jumlah_anggota` yang dihasilkan subquery sebelumnya.
+- **`COUNT(se.id_siswa)`**:
+    - Menghitung jumlah siswa (`id_siswa`) yang tergabung dalam setiap ekskul.
+    - Fungsi agregasi `COUNT` hanya menghitung baris yang tidak `NULL`.
+- **`JOIN ekskul e` dan `siswa_ekskul se`**:
+    - Menghubungkan tabel `ekskul` dengan tabel `siswa_ekskul` berdasarkan `id_ekskul`.
+    - Hasilnya adalah kombinasi data yang sesuai antara tabel `ekskul` (informasi ekskul) dan tabel `siswa_ekskul` (anggota ekskul).
+- **`GROUP BY e.id_ekskul`**:
+    - Mengelompokkan data berdasarkan `id_ekskul`.  
+
+ 7. ORDER BY
+
+```SQL
+ORDER BY jumlah_anggota DESC
+```
+
+- Mengurutkan hasil akhir berdasarkan *jumlah anggota* secara menurun.
+- Ekskul dengan jumlah anggota terbanyak akan ditampilkan lebih dulu, memudahkan dalam analisis.
+
 ### Kesimpulan
-Query ini adalah solusi yang efektif untuk menentukan ekskul populer berdasarkan jumlah anggota. Dengan menggunakan fungsi agregasi SQL seperti `COUNT` dan `AVG`, query memberikan informasi yang relevan untuk analisis data terkait ekskul. Relasi yang benar antara tabel sangat penting agar hasil query akurat.
+Query ini secara keseluruhan bertujuan untuk menampilkan semua ekskul yang memiliki jumlah anggota di atas rata-rata. Dengan menghitung jumlah siswa untuk setiap ekskul dan menyaring berdasarkan rata-rata, query ini memberikan wawasan tentang ekskul yang paling diminati oleh siswa. Hasilnya diurutkan untuk memudahkan identifikasi ekskul yang paling populer, yang dapat membantu dalam pengambilan keputusan terkait pengembangan program ekstrakurikuler.
+Ringkasan alur logika:
+1. `GROUP BY` menghitung jumlah anggota tiap ekskul menggunakan `COUNT`.
+2. Subquery menghitung rata-rata jumlah anggota dari semua ekskul.
+3. `HAVING` memfilter ekskul yang jumlah anggotanya lebih besar daripada rata-rata tersebut.
+
