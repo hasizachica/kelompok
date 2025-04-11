@@ -16,12 +16,12 @@ Fitur pencarian pada gambar memungkinkan pengguna untuk mencari siswa berdasarka
 
 ## Rincian Fitur
 
-![gambar](basdat1.jpg)
+![gambar](asett/basdat1.jpg)
 
-![gambar](basdat2.jpg)
+![gambar](asett/basdat2.jpg)
 
 ## Database
-![[Pasted image 20250320094017.png]]
+![gambar](asett/basdat3.png)
 
 ## Kode Program
 ```php
@@ -756,14 +756,14 @@ Fitur ini digunakan untuk menampilkan data ekstrakurikuler yang tersedia di seko
 
 ## Rincian Fitur
 
-![gambar](f1.jpg)
+![gambar](asett/f1.jpg)
 
-![gambar](f2.jpg)
+![gambar](asett/f2.jpg)
 
-![gambar](f3.jpg)
+![gambar](asett/f3.jpg)
 
 ## Database
-![[Pasted image 20250320095553.png]]
+![gambar](asett/basdat5.png)
 
 ## Kode Program
 
@@ -2249,13 +2249,13 @@ pengguna dapat mengakses berbagai fitur penting, seperti pendaftaran anggota, pe
 
 ## Rincian Fitur
 
-![gambar](s1.jpg)
+![gambar](asett/s1.jpg)
 
 ## Database
 
-![[Pasted image 20250320103440.png]]
-![[Pasted image 20250320094017.png]]
-![[Pasted image 20250320103559.png]]
+![gambar](asett/basdat4.png)
+![gambar](asett/basdat3.png)
+![gambar](asett/basdat5.png)
 
 ## Kode Program
 ### Analisis Kode PHP: Menghitung Jumlah Data dari Setiap Tabel
@@ -2831,9 +2831,9 @@ var myChart = new Chart(ctx, {
 
 # 9. Relasi Fitur Daftar Ekskul-Detail Ekskul-Daftar Anggotta
 ## **Tampilan Web**
-![[Pasted image 20250320105638.png]]
-![gambar](f2.jpg)
-![gambar](f3.jpg)
+![gambar](asett/f1.jpg)
+![gambar](asett/f2.jpg)
+![gambar](asett/f3.jpg)
 ## **Struktur Relasi Tabel**
 
 #### **a. Tabel Daftar Ekskul**
