@@ -1,3 +1,14 @@
+
+| Nama                         | Keaktifan |
+| ---------------------------- | --------- |
+| Rezky Awalya                 | 3         |
+| Andi Ashadelah Maharani Anil | 3         |
+| Nur Inayah Athaillah Abadi   | 3         |
+| Siti Nur Hasiza .A           | 3         |
+| Nur Afni Ramadhani           | 3         |
+| Fatsa Akhwani                | 3         |
+
+
 # 1. Fitur Pencarian Nama Siswa
 
 Fitur pencarian pada gambar memungkinkan pengguna untuk mencari siswa berdasarkan *nama*. Berikut adalah cara kerja fitur ini:
@@ -2909,3 +2920,140 @@ SELECT ekskul.nama_ekskul, COUNT(anggota.id_anggota) AS jumlah_anggota FROM daft
 ```
 - **Hasil Query:**
     - Nama Ekskul dan Jumlah Anggota pada setiap ekskul
+
+# Agregasi
+Pernyataan SQL berikut:
+
+```sql
+$query .= " GROUP BY p.id_pembina ORDER BY p.id_pembina ASC";
+```
+
+menunjukkan bahwa kueri sedang menggunakan fungsi agregasi, yang melibatkan pengelompokan data berdasarkan kolom tertentu (`p.id_pembina`) dan mengurutkan hasilnya secara **ascending** (menaik) berdasarkan kolom yang sama. Berikut adalah penjelasan rinci:
+
+### 1. **`GROUP BY`**
+- **Fungsi:** 
+  - Mengelompokkan baris data yang memiliki nilai sama dalam kolom tertentu, dalam hal ini `p.id_pembina`.
+  - Biasanya digunakan bersamaan dengan fungsi agregasi seperti `COUNT()`, `SUM()`, `AVG()`, `MIN()`, atau `MAX()`.
+
+- **Apa yang dilakukan di sini:**
+  - Semua baris data yang memiliki nilai `id_pembina` yang sama akan digabungkan menjadi satu kelompok.
+  - Setiap fungsi agregasi dalam klausa `SELECT` akan dihitung berdasarkan kelompok ini.
+
+- **Contoh:**
+  Jika tabel memiliki data berikut:
+
+| id_pembina | nama | jumlah |
+| ---------- | ---- | ------ |
+| 1          | A    | 10     |
+| 2          | B    | 20     |
+| 1          | C    | 15     |
+
+Pernyataan SQL berikut:
+
+```sql
+$query .= " GROUP BY p.id_pembina ORDER BY p.id_pembina ASC";
+```
+
+menunjukkan bahwa kueri sedang menggunakan fungsi agregasi, yang melibatkan pengelompokan data berdasarkan kolom tertentu (`p.id_pembina`) dan mengurutkan hasilnya secara **ascending** (menaik) berdasarkan kolom yang sama. Berikut adalah penjelasan rinci:
+
+### 1. **`GROUP BY`**
+- **Fungsi:** 
+  - Mengelompokkan baris data yang memiliki nilai sama dalam kolom tertentu, dalam hal ini `p.id_pembina`.
+  - Biasanya digunakan bersamaan dengan fungsi agregasi seperti `COUNT()`, `SUM()`, `AVG()`, `MIN()`, atau `MAX()`.
+
+- **Apa yang dilakukan di sini:**
+  - Semua baris data yang memiliki nilai `id_pembina` yang sama akan digabungkan menjadi satu kelompok.
+  - Setiap fungsi agregasi dalam klausa `SELECT` akan dihitung berdasarkan kelompok ini.
+
+- **Contoh:**
+  Jika tabel memiliki data berikut.
+
+| id_pembina | nama | jumlah |
+| ---------- | ---- | ------ |
+| 1          | A    | 10     |
+| 2          | B    | 20     |
+| 1          | C    | 15     |
+
+	
+
+  Setelah `GROUP BY p.id_pembina`, data akan dikelompokkan seperti ini:
+  - `id_pembina` 1: Semua baris dengan `id_pembina = 1`
+  - `id_pembina` 2: Semua baris dengan `id_pembina = 2`
+
+  Fungsi agregasi seperti `SUM(jumlah)` akan memberikan hasil:
+  - `id_pembina` 1: 10 + 15 = 25
+  - `id_pembina` 2: 20
+
+---
+
+### 2. **`ORDER BY p.id_pembina ASC`**
+- **Fungsi:** 
+  - Mengurutkan hasil akhir berdasarkan kolom `p.id_pembina`.
+  - **ASC** berarti urutan menaik (1, 2, 3...).
+
+- **Apa yang dilakukan di sini:**
+  - Setelah data dikelompokkan, hasilnya akan diurutkan berdasarkan nilai `id_pembina` secara menaik.
+
+- **Contoh:**
+  Jika hasil pengelompokan adalah  
+
+| id_pembina | total_jumlah |
+| ---------- | ------------ |
+| 2          | 20           |
+| 1          | 15           |
+
+---
+
+### 3. **Kesimpulan:**
+Kode ini:
+1. Mengelompokkan data berdasarkan `id_pembina`.
+2. Melakukan operasi agregasi pada setiap kelompok (meskipun fungsi agregasi spesifik tidak disebutkan di sini).
+3. Mengurutkan hasil berdasarkan `id_pembina` secara menaik.
+
+### **Catatan Tambahan:**
+Jika tidak ada fungsi agregasi di dalam klausa `SELECT`, SQL dapat memberikan kesalahan atau hasil yang tidak valid karena `GROUP BY` mensyaratkan kolom non-agregasi harus termasuk dalam klausa `GROUP BY`.
+
+  Setelah `GROUP BY p.id_pembina`, data akan dikelompokkan seperti ini:
+  - `id_pembina` 1: Semua baris dengan `id_pembina = 1`
+  - `id_pembina` 2: Semua baris dengan `id_pembina = 2`
+
+  Fungsi agregasi seperti `SUM(jumlah)` akan memberikan hasil:
+  - `id_pembina` 1: 10 + 15 = 25
+  - `id_pembina` 2: 20
+
+---
+
+### 2. **`ORDER BY p.id_pembina ASC`**
+- **Fungsi:** 
+  - Mengurutkan hasil akhir berdasarkan kolom `p.id_pembina`.
+  - **ASC** berarti urutan menaik (1, 2, 3...).
+
+- **Apa yang dilakukan di sini:**
+  - Setelah data dikelompokkan, hasilnya akan diurutkan berdasarkan nilai `id_pembina` secara menaik.
+
+- **Contoh:**
+  Jika hasil pengelompokan adalah:
+
+
+| id_pembina | total_jumlah |
+| ---------- | ------------ |
+| 2          | 20           |
+| 1          | 25           |
+
+  Setelah `ORDER BY p.id_pembina ASC`, hasil akan diubah menjadi:
+
+| id_pembina | total_jumlah |
+| ---------- | ------------ |
+| 1          | 25           |
+| 2          | 20           |
+
+---
+
+### 3. **Kesimpulan:**
+Kode ini:
+1. Mengelompokkan data berdasarkan `id_pembina`.
+2. Melakukan operasi agregasi pada setiap kelompok (meskipun fungsi agregasi spesifik tidak disebutkan di sini).
+3. Mengurutkan hasil berdasarkan `id_pembina` secara menaik.
+
+### **Catatan Tambahan:**
+Jika tidak ada fungsi agregasi di dalam klausa `SELECT`, SQL dapat memberikan kesalahan atau hasil yang tidak valid karena `GROUP BY` mensyaratkan kolom non-agregasi harus termasuk dalam klausa `GROUP BY`.
