@@ -2922,138 +2922,183 @@ SELECT ekskul.nama_ekskul, COUNT(anggota.id_anggota) AS jumlah_anggota FROM daft
     - Nama Ekskul dan Jumlah Anggota pada setiap ekskul
 
 # Agregasi
-Pernyataan SQL berikut:
+```mysql
+SELECT 
+    p.id_pembina, 
+    p.nama, 
+    p.kompetensi, 
+    GROUP_CONCAT(e.nama_ekskul SEPARATOR ', ') AS ekskul
+FROM 
+    pembina p
+LEFT JOIN 
+    pembina_ekskul pe 
+ON 
+    p.id_pembina = pe.id_pembina
+LEFT JOIN 
+    ekskul e 
+ON 
+    pe.id_ekskul = e.id_ekskul
+WHERE 
+    p.nama LIKE '%keyword%' OR e.nama_ekskul LIKE '%keyword%'
+GROUP BY 
+    p.id_pembina
+ORDER BY 
+    p.id_pembina ASC;
 
-```sql
-$query .= " GROUP BY p.id_pembina ORDER BY p.id_pembina ASC";
 ```
 
-menunjukkan bahwa kueri sedang menggunakan fungsi agregasi, yang melibatkan pengelompokan data berdasarkan kolom tertentu (`p.id_pembina`) dan mengurutkan hasilnya secara **ascending** (menaik) berdasarkan kolom yang sama. Berikut adalah penjelasan rinci:
+---
 
-### 1. **`GROUP BY`**
-- **Fungsi:** 
-  - Mengelompokkan baris data yang memiliki nilai sama dalam kolom tertentu, dalam hal ini `p.id_pembina`.
-  - Biasanya digunakan bersamaan dengan fungsi agregasi seperti `COUNT()`, `SUM()`, `AVG()`, `MIN()`, atau `MAX()`.
+### **Fungsi Utama Query**
 
-- **Apa yang dilakukan di sini:**
-  - Semua baris data yang memiliki nilai `id_pembina` yang sama akan digabungkan menjadi satu kelompok.
-  - Setiap fungsi agregasi dalam klausa `SELECT` akan dihitung berdasarkan kelompok ini.
+Query ini bertujuan untuk:
 
-- **Contoh:**
-  Jika tabel memiliki data berikut:
+1. Mengambil **data pembina** beserta daftar ekstrakurikuler (ekskul) yang mereka bimbing.
+    
+2. Menyediakan kemampuan pencarian berdasarkan **nama pembina** atau **nama ekskul**.
+    
+3. Menampilkan semua ekskul yang terkait dengan setiap pembina dalam satu baris, dengan ekskul digabungkan menggunakan koma.
+    
 
-| id_pembina | nama | jumlah |
-| ---------- | ---- | ------ |
-| 1          | A    | 10     |
-| 2          | B    | 20     |
-| 1          | C    | 15     |
+---
 
-Pernyataan SQL berikut:
+### **Penjelasan Bagian Query**
+
+#### **1. SELECT Clause**
 
 ```sql
-$query .= " GROUP BY p.id_pembina ORDER BY p.id_pembina ASC";
+SELECT p.id_pembina, p.nama, p.kompetensi, 
+       GROUP_CONCAT(e.nama_ekskul SEPARATOR ', ') AS ekskul
 ```
 
-menunjukkan bahwa kueri sedang menggunakan fungsi agregasi, yang melibatkan pengelompokan data berdasarkan kolom tertentu (`p.id_pembina`) dan mengurutkan hasilnya secara **ascending** (menaik) berdasarkan kolom yang sama. Berikut adalah penjelasan rinci:
-
-### 1. **`GROUP BY`**
-- **Fungsi:** 
-  - Mengelompokkan baris data yang memiliki nilai sama dalam kolom tertentu, dalam hal ini `p.id_pembina`.
-  - Biasanya digunakan bersamaan dengan fungsi agregasi seperti `COUNT()`, `SUM()`, `AVG()`, `MIN()`, atau `MAX()`.
-
-- **Apa yang dilakukan di sini:**
-  - Semua baris data yang memiliki nilai `id_pembina` yang sama akan digabungkan menjadi satu kelompok.
-  - Setiap fungsi agregasi dalam klausa `SELECT` akan dihitung berdasarkan kelompok ini.
-
-- **Contoh:**
-  Jika tabel memiliki data berikut.
-
-| id_pembina | nama | jumlah |
-| ---------- | ---- | ------ |
-| 1          | A    | 10     |
-| 2          | B    | 20     |
-| 1          | C    | 15     |
-
-	
-
-  Setelah `GROUP BY p.id_pembina`, data akan dikelompokkan seperti ini:
-  - `id_pembina` 1: Semua baris dengan `id_pembina = 1`
-  - `id_pembina` 2: Semua baris dengan `id_pembina = 2`
-
-  Fungsi agregasi seperti `SUM(jumlah)` akan memberikan hasil:
-  - `id_pembina` 1: 10 + 15 = 25
-  - `id_pembina` 2: 20
+- `p.id_pembina`, `p.nama`, `p.kompetensi`:
+    
+    - Mengambil data pembina seperti ID, nama, dan kompetensi dari tabel `pembina`.
+        
+- `GROUP_CONCAT(e.nama_ekskul SEPARATOR ', ') AS ekskul`:
+    
+    - Menggabungkan semua nama ekskul yang dibimbing oleh seorang pembina menjadi satu string, dipisahkan dengan koma.
+        
+    - Contoh: Jika pembina membimbing "Basket", "Futsal", dan "Volleyball", hasilnya akan menjadi `Basket, Futsal, Volleyball`.
+        
 
 ---
 
-### 2. **`ORDER BY p.id_pembina ASC`**
-- **Fungsi:** 
-  - Mengurutkan hasil akhir berdasarkan kolom `p.id_pembina`.
-  - **ASC** berarti urutan menaik (1, 2, 3...).
+#### **2. FROM dan JOIN**
 
-- **Apa yang dilakukan di sini:**
-  - Setelah data dikelompokkan, hasilnya akan diurutkan berdasarkan nilai `id_pembina` secara menaik.
+```sql
+FROM pembina p
+LEFT JOIN pembina_ekskul pe ON p.id_pembina = pe.id_pembina
+LEFT JOIN ekskul e ON pe.id_ekskul = e.id_ekskul
+```
 
-- **Contoh:**
-  Jika hasil pengelompokan adalah  
-
-| id_pembina | total_jumlah |
-| ---------- | ------------ |
-| 2          | 20           |
-| 1          | 15           |
-
----
-
-### 3. **Kesimpulan:**
-Kode ini:
-1. Mengelompokkan data berdasarkan `id_pembina`.
-2. Melakukan operasi agregasi pada setiap kelompok (meskipun fungsi agregasi spesifik tidak disebutkan di sini).
-3. Mengurutkan hasil berdasarkan `id_pembina` secara menaik.
-
-### **Catatan Tambahan:**
-Jika tidak ada fungsi agregasi di dalam klausa `SELECT`, SQL dapat memberikan kesalahan atau hasil yang tidak valid karena `GROUP BY` mensyaratkan kolom non-agregasi harus termasuk dalam klausa `GROUP BY`.
-
-  Setelah `GROUP BY p.id_pembina`, data akan dikelompokkan seperti ini:
-  - `id_pembina` 1: Semua baris dengan `id_pembina = 1`
-  - `id_pembina` 2: Semua baris dengan `id_pembina = 2`
-
-  Fungsi agregasi seperti `SUM(jumlah)` akan memberikan hasil:
-  - `id_pembina` 1: 10 + 15 = 25
-  - `id_pembina` 2: 20
+- **Tabel `pembina` (alias `p`)**:
+    
+    - Merupakan tabel utama yang menyimpan data pembina.
+        
+- **LEFT JOIN**:
+    
+    - Tabel `pembina_ekskul` digunakan untuk menghubungkan pembina dengan ekskul.
+        
+    - Tabel `ekskul` digunakan untuk mendapatkan detail ekskul berdasarkan ID ekskul.
+        
+- **LEFT JOIN memastikan**:
+    
+    - Jika seorang pembina tidak membimbing ekskul mana pun, data pembina tetap muncul, tetapi kolom `ekskul` akan kosong.
+        
 
 ---
 
-### 2. **`ORDER BY p.id_pembina ASC`**
-- **Fungsi:** 
-  - Mengurutkan hasil akhir berdasarkan kolom `p.id_pembina`.
-  - **ASC** berarti urutan menaik (1, 2, 3...).
+#### **3. Kondisi Pencarian (WHERE Clause)**
 
-- **Apa yang dilakukan di sini:**
-  - Setelah data dikelompokkan, hasilnya akan diurutkan berdasarkan nilai `id_pembina` secara menaik.
+```sql
+WHERE p.nama LIKE '%$search%' OR e.nama_ekskul LIKE '%$search%'
+```
 
-- **Contoh:**
-  Jika hasil pengelompokan adalah:
-
-
-| id_pembina | total_jumlah |
-| ---------- | ------------ |
-| 2          | 20           |
-| 1          | 25           |
-
-  Setelah `ORDER BY p.id_pembina ASC`, hasil akan diubah menjadi:
-
-| id_pembina | total_jumlah |
-| ---------- | ------------ |
-| 1          | 25           |
-| 2          | 20           |
+- **`WHERE`**:
+    
+    - Digunakan untuk menyaring hasil berdasarkan kata kunci pencarian.
+        
+- **`p.nama LIKE '%$search%'`**:
+    
+    - Menyaring pembina berdasarkan nama mereka.
+        
+- **`e.nama_ekskul LIKE '%$search%'`**:
+    
+    - Menyaring berdasarkan nama ekskul.
+        
+- **`LIKE '%$search%'`**:
+    
+    - Menyaring data yang mengandung kata kunci (case-insensitive).
+        
 
 ---
 
-### 3. **Kesimpulan:**
-Kode ini:
-1. Mengelompokkan data berdasarkan `id_pembina`.
-2. Melakukan operasi agregasi pada setiap kelompok (meskipun fungsi agregasi spesifik tidak disebutkan di sini).
-3. Mengurutkan hasil berdasarkan `id_pembina` secara menaik.
+#### **4. Pengelompokan (GROUP BY)**
 
-### **Catatan Tambahan:**
-Jika tidak ada fungsi agregasi di dalam klausa `SELECT`, SQL dapat memberikan kesalahan atau hasil yang tidak valid karena `GROUP BY` mensyaratkan kolom non-agregasi harus termasuk dalam klausa `GROUP BY`.
+```sql
+GROUP BY p.id_pembina
+```
+
+- **`GROUP BY`**:
+    
+    - Mengelompokkan hasil berdasarkan pembina (`p.id_pembina`).
+        
+- Penting untuk digunakan bersama dengan fungsi agregasi seperti `GROUP_CONCAT`, agar ekskul untuk setiap pembina ditampilkan dalam satu baris.
+    
+
+---
+
+#### **5. Pengurutan (ORDER BY)**
+
+```sql
+ORDER BY p.id_pembina ASC
+```
+
+- **`ORDER BY`**:
+    
+    - Mengurutkan hasil berdasarkan ID pembina (`p.id_pembina`) secara menaik.
+        
+
+---
+
+### **Peran Agregasi**
+
+- **`GROUP_CONCAT`** adalah fungsi agregasi yang digunakan untuk menggabungkan semua ekskul yang dibimbing oleh pembina ke dalam satu kolom.
+    
+- **Hubungan dengan `GROUP BY`**:
+    
+    - Tanpa `GROUP BY`, fungsi agregasi seperti `GROUP_CONCAT` tidak akan bekerja dengan benar, karena pengelompokan data tidak terjadi.
+        
+
+---
+
+### **Hasil Query**
+
+Contoh hasil ketika query dijalankan:
+
+|**ID Pembina**|**Nama Pembina**|**Kompetensi**|**Ekskul**|
+|---|---|---|---|
+|1|Budi Santoso|Olahraga|Basket, Futsal, Volleyball|
+|2|Siti Aminah|Seni|Tari, Musik|
+|3|Joko Widodo|Kepemimpinan|(kosong jika tidak ada ekskul)|
+
+- Jika seorang pembina tidak membimbing ekskul mana pun, kolom `ekskul` akan kosong.
+    
+
+---
+
+### **Keunggulan Query**
+
+1. **Efisien**:
+    
+    - Semua ekskul yang terkait dengan pembina disatukan dalam satu baris, membuat data lebih mudah dibaca.
+        
+2. **Fleksibel**:
+    
+    - Query mendukung pencarian berdasarkan nama pembina atau ekskul.
+        
+3. **Komprehensif**:
+    
+    - Tetap menampilkan pembina yang tidak memiliki ekskul dengan menggunakan `LEFT JOIN`.
+        
